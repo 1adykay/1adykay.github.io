@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McKayla Jodon | Real of Ohio</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --dark: #1A2E1A;
+    --green: #5A8A4A;
+    --light-green: #A8D48A;
+    --pale: #F2F7EF;
+    --sand: #D8EDD0;
+    --pink: #FF1493;
+    --pink-light: #FF69B4;
+    --white: #FFFFFF;
+    --gray: #6B7B6B;
+  }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--pale);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--dark);
+    padding: 80px 40px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 5px;
+    background: var(--pink);
+  }
+  .hero-corner {
+    position: absolute;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: #2D5A27;
+    opacity: 0.4;
+  }
+  .hero-corner.tl { top: -80px; left: -80px; }
+  .hero-corner.br { bottom: -80px; right: -80px; }
+
+  .star { position: absolute; }
+  .star svg { fill: var(--pink); }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--light-green);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+  }
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    display: block;
+    width: 30px;
+    height: 1px;
+    background: var(--light-green);
+  }
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(48px, 8vw, 80px);
+    font-style: italic;
+    font-weight: 400;
+    color: var(--white);
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(18px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--light-green);
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-tagline {
+    font-size: 15px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.55);
+    max-width: 420px;
+    margin: 0 auto 36px;
+    line-height: 1.7;
+  }
+  .hero-pills {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .pill {
+    padding: 8px 18px;
+    border: 1px solid rgba(168,212,138,0.3);
+    color: rgba(255,255,255,0.6);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    border-radius: 20px;
+  }
+
+  /* TOOLS GRID */
+  .tools-section {
+    padding: 72px 40px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .section-tag {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--pink);
+    margin-bottom: 12px;
+    text-align: center;
+  }
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--dark);
+    text-align: center;
+    margin-bottom: 8px;
+    line-height: 1.15;
+  }
+  .section-title em { font-style: italic; color: var(--green); }
+  .section-sub {
+    font-size: 15px;
+    color: var(--gray);
+    text-align: center;
+    margin-bottom: 52px;
+    font-weight: 300;
+    line-height: 1.6;
+  }
+
+  .tools-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .tool-card {
+    background: var(--white);
+    padding: 36px 32px;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    border-left: 4px solid transparent;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; right: 0;
+    width: 80px; height: 80px;
+    border-radius: 50%;
+    opacity: 0.08;
+    transition: opacity 0.2s;
+  }
+  .tool-card.green::before { background: var(--green); }
+  .tool-card.pink::before { background: var(--pink); }
+  .tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,0,0,0.1);
+  }
+  .tool-card.green:hover { border-left-color: var(--green); }
+  .tool-card.pink:hover { border-left-color: var(--pink); }
+  .tool-card.green::before { top: -20px; right: -20px; }
+
+  .tool-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+    font-size: 22px;
+  }
+  .tool-icon.green { background: var(--sand); }
+  .tool-icon.pink { background: #FFE4F0; }
+
+  .tool-label {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .tool-label.green { color: var(--green); }
+  .tool-label.pink { color: var(--pink); }
+
+  .tool-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 10px;
+    line-height: 1.2;
+  }
+  .tool-desc {
+    font-size: 14px;
+    color: var(--gray);
+    line-height: 1.7;
+    font-weight: 300;
+    margin-bottom: 24px;
+  }
+  .tool-link {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .tool-link.green { color: var(--green); }
+  .tool-link.pink { color: var(--pink); }
+
+  .coming-soon {
+    background: var(--pale);
+    border: 2px dashed #C8D8C8;
+    padding: 36px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    min-height: 200px;
+  }
+  .coming-soon span {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #B0C8B0;
+  }
+  .coming-soon p {
+    font-size: 13px;
+    color: #B0C8B0;
+    font-weight: 300;
+  }
+
+  /* ABOUT BAND */
+  .about-band {
+    background: var(--dark);
+    padding: 72px 40px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 100%;
+  }
+  .about-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 3.5vw, 44px);
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1.15;
+    margin-bottom: 20px;
+  }
+  .about-left h2 em { font-style: italic; color: var(--light-green); }
+  .about-left p {
+    font-size: 15px;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.6);
+    font-weight: 300;
+    margin-bottom: 16px;
+  }
+  .about-left p strong { color: var(--white); font-weight: 500; }
+  .real-acronym {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .real-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .real-letter {
+    width: 36px;
+    height: 36px;
+    background: var(--pink);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 700;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .real-word {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+  }
+  .real-word span {
+    color: rgba(255,255,255,0.4);
+    font-weight: 300;
+    margin-left: 6px;
+    font-size: 13px;
+  }
+  .about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+  }
+  .about-stat {
+    background: rgba(255,255,255,0.04);
+    padding: 20px 24px;
+    border-left: 3px solid transparent;
+    transition: border-color 0.2s, background 0.2s;
+  }
+  .about-stat:hover {
+    border-left-color: var(--pink);
+    background: rgba(255,255,255,0.07);
+  }
+  .stat-title {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--white);
+    margin-bottom: 4px;
+  }
+  .stat-desc {
+    font-size: 13px;
+    color: rgba(255,255,255,0.45);
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  /* CONTACT BAND */
+  .contact-band {
+    background: var(--pink);
+    padding: 60px 40px;
+    text-align: center;
+  }
+  .contact-band h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(26px, 4vw, 42px);
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 12px;
+  }
+  .contact-band h2 em { font-style: italic; }
+  .contact-band p {
+    font-size: 15px;
+    color: rgba(255,255,255,0.75);
+    margin-bottom: 32px;
+    font-weight: 300;
+  }
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--white);
+    color: var(--pink);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    transition: opacity 0.2s, transform 0.2s;
+    border: none;
+    cursor: pointer;
+  }
+  .contact-btn:hover { opacity: 0.92; transform: translateY(-2px); }
+
+  /* FOOTER */
+  footer {
+    background: #0D1A0D;
+    padding: 36px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    font-style: italic;
+    color: var(--light-green);
+  }
+  .footer-brand span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-style: normal;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.12em;
+    color: rgba(255,255,255,0.3);
+    margin-top: 3px;
+  }
+  .footer-links {
+    display: flex;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .footer-links a {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    text-decoration: none;
+    letter-spacing: 0.06em;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--light-green); }
+
+  @media (max-width: 700px) {
+    .tools-grid { grid-template-columns: 1fr; }
+    .about-band { grid-template-columns: 1fr; gap: 40px; padding: 56px 28px; }
+    .tools-section { padding: 56px 24px; }
+    .hero { padding: 60px 24px 48px; }
+    footer { flex-direction: column; align-items: flex-start; padding: 32px 24px; }
+    .contact-band { padding: 52px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-corner tl"></div>
+  <div class="hero-corner br"></div>
+
+  <div style="position:absolute; top:32px; left:48px;">
+    <svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#FF1493" opacity="0.7"/></svg>
+  </div>
+  <div style="position:absolute; top:28px; right:52px;">
+    <svg width="12" height="12" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#A8D48A" opacity="0.6"/></svg>
+  </div>
+
+  <div style="position: relative; z-index: 2;">
+    <div class="eyebrow">Marion & Surrounding Counties, Ohio</div>
+    <div class="hero-name">McKayla Jodon</div>
+    <div class="hero-title">Real of Ohio</div>
+    <p class="hero-tagline">Real agent. Real story. Real results. Serving rural Ohio with honesty, hustle, and heart.</p>
+    <div class="hero-pills">
+      <div class="pill">Marion County</div>
+      <div class="pill">Morrow County</div>
+      <div class="pill">Lorain County</div>
+      <div class="pill">Summit County</div>
+      <div class="pill">Medina County</div>
+      <div class="pill">Delaware County</div>
+    </div>
+  </div>
+</section>
+
+<!-- TOOLS -->
+<section class="tools-section">
+  <div class="section-tag">My Tools & Resources</div>
+  <h2 class="section-title">Everything you need,<br><em>all in one place.</em></h2>
+  <p class="section-sub">Free tools and guides built specifically for buyers and sellers in rural Ohio.</p>
+
+  <div class="tools-grid">
+
+    <a href="https://1adykay.github.io/buyer-leads/" class="tool-card green">
+      <div class="tool-icon green">🏡</div>
+      <div class="tool-label green">For Buyers</div>
+      <div class="tool-name">First-Time Buyer Guide</div>
+      <div class="tool-desc">Free consultation + buyer guide. Find out what you qualify for, USDA eligibility, and what buying a home in rural Ohio actually looks like.</div>
+      <div class="tool-link green">
+        Get Started
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <a href="https://1adykay.github.io/fha-checklist/" class="tool-card pink">
+      <div class="tool-icon pink">📋</div>
+      <div class="tool-label pink">Agent Tools</div>
+      <div class="tool-name">FHA Property Checklist</div>
+      <div class="tool-desc">A showing checklist built for FHA buyers — covers structure, systems, health & safety, and rural-specific requirements like wells and septic.</div>
+      <div class="tool-link pink">
+        Open Checklist
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+      </div>
+    </a>
+
+    <div class="coming-soon">
+      <span>Coming Soon</span>
+      <p>More resources on the way</p>
+    </div>
+
+    <div class="coming-soon">
+      <span>Coming Soon</span>
+      <p>More resources on the way</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ABOUT -->
+<div class="about-band">
+  <div class="about-left">
+    <h2>Not your average<br><em>realtor.</em></h2>
+    <p>I grew up across Northeast Ohio and now I'm planted in Marion — serving this community not just as an agent but as a neighbor, volunteer, and real person who actually cares about your outcome.</p>
+    <p><strong>I specialize in rural and acreage properties</strong> — pole barns, wells, septic, non-cookie-cutter listings. The stuff most agents don't want to deal with is exactly my lane.</p>
+    <div class="real-acronym">
+      <div class="real-row">
+        <div class="real-letter">R</div>
+        <div class="real-word">Relational <span>— people first, always</span></div>
+      </div>
+      <div class="real-row">
+        <div class="real-letter">E</div>
+        <div class="real-word">Ethical <span>— honest even when it's hard</span></div>
+      </div>
+      <div class="real-row">
+        <div class="real-letter">A</div>
+        <div class="real-word">Authentic <span>— no corporate fluff</span></div>
+      </div>
+      <div class="real-row">
+        <div class="real-letter">L</div>
+        <div class="real-word">Local <span>— rooted in this community</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="about-right">
+    <div class="about-stat">
+      <div class="stat-title">Rural & Acreage Specialist</div>
+      <div class="stat-desc">Pole barns, wells, septic — I speak this language fluently.</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-title">USDA Loan Expertise</div>
+      <div class="stat-desc">Many rural Ohio buyers qualify for $0 down. Let's find out if you do.</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-title">Community First</div>
+      <div class="stat-desc">Weekly volunteer at Voice of Hope in Marion. This community is personal.</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-title">No Ghosting. No Games.</div>
+      <div class="stat-desc">I return calls, answer questions, and tell you the truth — always.</div>
+    </div>
+    <div class="about-stat">
+      <div class="stat-title">Licensed Ohio REALTOR®</div>
+      <div class="stat-desc">Real of Ohio — serving Marion and surrounding counties.</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-band">
+  <h2>Ready to <em>make moves?</em></h2>
+  <p>Let's have a real conversation about what's possible for you.</p>
+  <a href="https://1adykay.github.io/buyer-leads/" class="contact-btn">
+    Work With McKayla
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+  </a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    McKayla Jodon
+    <span>Real of Ohio · Licensed Ohio REALTOR®</span>
+  </div>
+  <div class="footer-links">
+    <a href="https://1adykay.github.io/buyer-leads/">Buyer Guide</a>
+    <a href="https://1adykay.github.io/fha-checklist/">FHA Checklist</a>
+    <a href="mailto:mckaylajodon@gmail.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
