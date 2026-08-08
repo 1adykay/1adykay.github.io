@@ -9,8 +9,8 @@
 :root {
 --dark: #2B2321;
 --pink: #C2477A;
---light-green: #E8A9C1;
---green: #8C3358;
+--blush: #E8A9C1;
+--rose-deep: #8C3358;
 --pale: #FBF7F5;
 --sand: #F4E3E9;
 --white: #FFFFFF;
@@ -27,7 +27,7 @@
 
   /* HERO */
   .hero {
-    background: var(--dark);
+    background: var(--pale);
     padding: 80px 40px 60px;
     text-align: center;
     position: relative;
@@ -44,8 +44,8 @@
     position: absolute;
     width: 200px; height: 200px;
     border-radius: 50%;
-    background: #2D5A27;
-    opacity: 0.4;
+    background: var(--pink);
+    opacity: 0.12;
   }
   .hero-corner.tl { top: -80px; left: -80px; }
   .hero-corner.br { bottom: -80px; right: -80px; }
@@ -58,7 +58,7 @@
     font-weight: 600;
     letter-spacing: 0.22em;
     text-transform: uppercase;
-    color: var(--light-green);
+    color: var(--rose-deep);
     margin-bottom: 20px;
     display: flex;
     align-items: center;
@@ -70,14 +70,14 @@
     display: block;
     width: 30px;
     height: 1px;
-    background: var(--light-green);
+    background: var(--pink);
   }
   .hero-name {
     font-family: 'Playfair Display', serif;
     font-size: clamp(48px, 8vw, 80px);
     font-style: italic;
     font-weight: 400;
-    color: var(--white);
+    color: var(--dark);
     line-height: 1;
     margin-bottom: 8px;
   }
@@ -85,7 +85,7 @@
     font-family: 'Playfair Display', serif;
     font-size: clamp(18px, 3vw, 26px);
     font-weight: 700;
-    color: var(--light-green);
+    color: var(--pink);
     letter-spacing: 4px;
     text-transform: uppercase;
     margin-bottom: 24px;
@@ -93,7 +93,7 @@
   .hero-tagline {
     font-size: 15px;
     font-weight: 300;
-    color: rgba(255,255,255,0.55);
+    color: rgba(43,35,33,0.65);
     max-width: 420px;
     margin: 0 auto 36px;
     line-height: 1.7;
@@ -106,8 +106,8 @@
   }
   .pill {
     padding: 8px 18px;
-    border: 1px solid rgba(168,212,138,0.3);
-    color: rgba(255,255,255,0.6);
+    border: 1px solid rgba(194,71,122,0.3);
+    color: rgba(43,35,33,0.7);
     font-size: 12px;
     font-weight: 500;
     letter-spacing: 0.08em;
@@ -138,7 +138,7 @@
     margin-bottom: 8px;
     line-height: 1.15;
   }
-  .section-title em { font-style: italic; color: var(--green); }
+  .section-title em { font-style: italic; color: var(--rose-deep); }
   .section-sub {
     font-size: 15px;
     color: var(--gray);
@@ -173,15 +173,15 @@
     opacity: 0.08;
     transition: opacity 0.2s;
   }
-  .tool-card.green::before { background: var(--green); }
+  .tool-card.rose::before { background: var(--rose-deep); }
   .tool-card.pink::before { background: var(--pink); }
   .tool-card:hover {
     transform: translateY(-3px);
     box-shadow: 0 12px 40px rgba(0,0,0,0.1);
   }
-  .tool-card.green:hover { border-left-color: var(--green); }
+  .tool-card.rose:hover { border-left-color: var(--rose-deep); }
   .tool-card.pink:hover { border-left-color: var(--pink); }
-  .tool-card.green::before { top: -20px; right: -20px; }
+  .tool-card.rose::before { top: -20px; right: -20px; }
 
   .tool-icon {
     width: 48px;
@@ -193,7 +193,7 @@
     margin-bottom: 20px;
     font-size: 22px;
   }
-  .tool-icon.green { background: var(--sand); }
+  .tool-icon.rose { background: #F0D5DE; }
   .tool-icon.pink { background: #FFE4F0; }
 
   .tool-label {
@@ -203,7 +203,7 @@
     text-transform: uppercase;
     margin-bottom: 8px;
   }
-  .tool-label.green { color: var(--green); }
+  .tool-label.rose { color: var(--rose-deep); }
   .tool-label.pink { color: var(--pink); }
 
   .tool-name {
@@ -230,12 +230,12 @@
     align-items: center;
     gap: 8px;
   }
-  .tool-link.green { color: var(--green); }
+  .tool-link.rose { color: var(--rose-deep); }
   .tool-link.pink { color: var(--pink); }
 
   .coming-soon {
     background: var(--pale);
-    border: 2px dashed #C8D8C8;
+    border: 2px dashed #E8D3DA;
     padding: 36px 32px;
     display: flex;
     align-items: center;
@@ -249,11 +249,11 @@
     font-weight: 600;
     letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: #B0C8B0;
+    color: var(--gray);
   }
   .coming-soon p {
     font-size: 13px;
-    color: #B0C8B0;
+    color: var(--gray);
     font-weight: 300;
   }
 
@@ -275,7 +275,7 @@
     line-height: 1.15;
     margin-bottom: 20px;
   }
-  .about-left h2 em { font-style: italic; color: var(--light-green); }
+  .about-left h2 em { font-style: italic; color: var(--blush); }
   .about-left p {
     font-size: 15px;
     line-height: 1.8;
@@ -388,7 +388,7 @@
 
   /* FOOTER */
   footer {
-    background: #0D1A0D;
+    background: var(--dark);
     padding: 36px 40px;
     display: flex;
     align-items: center;
@@ -400,7 +400,7 @@
     font-family: 'Playfair Display', serif;
     font-size: 18px;
     font-style: italic;
-    color: var(--light-green);
+    color: var(--blush);
   }
   .footer-brand span {
     display: block;
@@ -424,7 +424,7 @@
     letter-spacing: 0.06em;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: var(--light-green); }
+  .footer-links a:hover { color: var(--blush); }
 
   @media (max-width: 700px) {
     .tools-grid { grid-template-columns: 1fr; }
@@ -444,10 +444,10 @@
   <div class="hero-corner br"></div>
 
   <div style="position:absolute; top:32px; left:48px;">
-    <svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#FF1493" opacity="0.7"/></svg>
+    <svg width="16" height="16" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#C2477A" opacity="0.7"/></svg>
   </div>
   <div style="position:absolute; top:28px; right:52px;">
-    <svg width="12" height="12" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#A8D48A" opacity="0.6"/></svg>
+    <svg width="12" height="12" viewBox="0 0 16 16"><polygon points="8,0 10,6 16,6 11,10 13,16 8,12 3,16 5,10 0,6 6,6" fill="#E8A9C1" opacity="0.6"/></svg>
   </div>
 
   <div style="position: relative; z-index: 2;">
@@ -474,12 +474,12 @@
 
   <div class="tools-grid">
 
-    <a href="https://1adykay.github.io/buyer-leads/" class="tool-card green">
-      <div class="tool-icon green">🏡</div>
-      <div class="tool-label green">For Buyers</div>
+    <a href="https://1adykay.github.io/buyer-leads/" class="tool-card rose">
+      <div class="tool-icon rose">🏡</div>
+      <div class="tool-label rose">For Buyers</div>
       <div class="tool-name">First-Time Buyer Guide</div>
       <div class="tool-desc">Free consultation + buyer guide. Find out what you qualify for, USDA eligibility, and what buying a home in rural Ohio actually looks like.</div>
-      <div class="tool-link green">Get Started <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="tool-link rose">Get Started <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
     <a href="https://1adykay.github.io/fha-checklist/" class="tool-card pink">
@@ -498,28 +498,28 @@
       <div class="tool-link pink">Get My Free Consult <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="https://1adykay.github.io/inherited-estate/" class="tool-card green">
-      <div class="tool-icon green">⚖️</div>
-      <div class="tool-label green">For Families</div>
+    <a href="https://1adykay.github.io/inherited-estate/" class="tool-card rose">
+      <div class="tool-icon rose">⚖️</div>
+      <div class="tool-label rose">For Families</div>
       <div class="tool-name">Inherited Estate Guide</div>
       <div class="tool-desc">A complete Ohio resource for navigating inherited property — probate, taxes, your options, and what to do first. Step-by-step and in plain English.</div>
-      <div class="tool-link green">Read the Guide <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="tool-link rose">Read the Guide <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="https://1adykay.github.io/relocation-guide/" class="tool-card green">
-      <div class="tool-icon green">📦</div>
-      <div class="tool-label green">For Movers</div>
+    <a href="https://1adykay.github.io/relocation-guide/" class="tool-card rose">
+      <div class="tool-icon rose">📦</div>
+      <div class="tool-label rose">For Movers</div>
       <div class="tool-name">Ohio Relocation Guide</div>
       <div class="tool-desc">Everything you need to do — in the right order — when relocating to or within Ohio. Interactive checklist with 6 phases from research to move-in day.</div>
-      <div class="tool-link green">Start Planning <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="tool-link rose">Start Planning <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
-    <a href="https://1adykay.github.io/sell-in-90-days/" class="tool-card green">
-      <div class="tool-icon green">🏡</div>
-      <div class="tool-label green">For Sellers</div>
+    <a href="https://1adykay.github.io/sell-in-90-days/" class="tool-card rose">
+      <div class="tool-icon rose">🏡</div>
+      <div class="tool-label rose">For Sellers</div>
       <div class="tool-name">Sell Your Home in 90 Days</div>
       <div class="tool-desc">Professional photos, drone footage, staging, and full social media marketing — all paid by me. Plus a realistic seller checklist and value-boosting tips to maximize your price.</div>
-      <div class="tool-link green">See How It Works <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
+      <div class="tool-link rose">See How It Works <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></div>
     </a>
 
   </div>
